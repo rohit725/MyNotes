@@ -17,7 +17,11 @@
         app:layout_constraintEnd_toStartOf="@+id/Priority"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:met_primaryColor="@color/colorAccent" />
+        app:met_primaryColor="@color/colorAccent"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelText="Title"
+        app:met_minCharacters="3"
+        app:met_maxCharacters="10"/>
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/Description"
@@ -30,7 +34,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Title"
-        app:met_primaryColor="@color/colorAccent" />
+        app:met_primaryColor="@color/colorAccent"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelText="Description" />
 
     <ImageView
         android:id="@+id/Priority"
@@ -75,8 +81,8 @@
         android:id="@+id/AddReminder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:drawableLeft="@drawable/ic_plus_circle"
         android:gravity="center"
@@ -105,7 +111,7 @@
     <Spinner
         android:id="@+id/Repeat"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="23dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
@@ -126,15 +132,23 @@
             android:id="@+id/Cancel"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Cancel" />
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorAccent" />
 
         <Button
             android:id="@+id/Save"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Save" />
     </LinearLayout>

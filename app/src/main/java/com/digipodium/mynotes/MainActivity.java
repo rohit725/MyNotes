@@ -93,18 +93,13 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private static Tasks addUser(final TaskDatabase db, Tasks task) {
-        db.taskDao().insertTask(task);
-        return task;
-    }
-
     private static void populateWithTestData(TaskDatabase db) {
         Tasks task = new Tasks();   //Just a Demo Task
         task.setTask_id(1);
         task.setTask_name("Docker Presentation");
         task.setTask_description("You have to create a presentation on docker.");
         task.setTask_status(FALSE);
-        addUser(db, task);
+        db.taskDao().insertTask(task);
     }
 
 }

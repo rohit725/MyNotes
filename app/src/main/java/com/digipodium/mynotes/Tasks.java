@@ -6,16 +6,9 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
 import java.sql.Time;
+import java.time.OffsetDateTime;
 import java.util.Date;
 
-class Reminder {
-    @ColumnInfo(name = "Rdate")
-    public Date reminder_date;
-
-    @ColumnInfo(name = "Rtime")
-    public Time reminder_time;
-
-}
 
 @Entity
 public class Tasks {
@@ -33,10 +26,10 @@ public class Tasks {
     private boolean task_status;
 
     @ColumnInfo(name = "DueDate")
-    public Date task_duedate;
+    private Date task_duedate;
 
-    @Embedded
-    public Reminder reminder;
+    @ColumnInfo(name = "Reminder")
+    private OffsetDateTime reminder;
 
     public int getTask_id(){
         return task_id;
@@ -68,6 +61,22 @@ public class Tasks {
 
     public void setTask_status(boolean task_status){
         this.task_status = task_status;
+    }
+
+    public OffsetDateTime getReminder(){
+        return reminder;
+    }
+
+    public void setReminder(OffsetDateTime reminder){
+        this.reminder = reminder;
+    }
+
+    public Date getTask_duedate(){
+        return task_duedate;
+    }
+
+    public void setTask_duedate(Date task_duedate){
+        this.task_duedate = task_duedate;
     }
 
 }
